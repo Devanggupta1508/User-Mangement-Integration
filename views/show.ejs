@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Vault</title>
+    <link rel ="stylesheet" href="show.css">
+</head>
+<body>
+    <h1>User_Vault </h1>
+    <p>  Safe and secure user storage</p>
+    <h4>Total number of users: <%= userCount %></h4> <!-- ✅ Total count show -->
+
+    <form method="GET" action="/user/new">
+        <button type="submit">ADD NEW+</button>
+    </form>
+    
+    
+
+    <table border="1">
+        <br>
+        <caption>USER DATA</caption>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>USERNAME</th>
+                <th>EMAIL</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% users.forEach(user => { %>
+            <tr>
+                <td><%= user.id %></td>
+                <td><%= user.username %></td>
+                <td><%= user.email %></td>
+                <td><form method="GET" action="/user/<%=user.id %>/edit"><button>Edit Username</button></form></td>
+
+                <td><form method="GET" action="/user/<%= user.id %>/delete"><button type="submit">Delete User</button> </form></td>
+                
+
+                
+
+                
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
+</body>
+</html>

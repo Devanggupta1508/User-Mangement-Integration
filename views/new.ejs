@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register User</title>
+    <link rel="stylesheet" href="/new.css">
+</head>
+<body>
+    <div class="container">
+        <h2>User Registration Portal</h2>
+        <form method="POST" action="/user/new">
+            <label for="username">Enter Your Username</label>
+            <textarea id="username" placeholder="Enter your username" required name="username"></textarea>
+
+            <label for="password">Enter Your Password</label>
+            <input type="password" required name="password" id="password">
+
+            <label for="email">Enter Your Email</label>
+            <input type="email" required name="email" id="email">
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>
